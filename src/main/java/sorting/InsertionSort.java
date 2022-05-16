@@ -22,17 +22,12 @@ public class InsertionSort {
             intArray[i] = newElement;
         }
 
-        for (int i = 0; i < intArray.length; i++) {
-            System.out.println(intArray[i]);
-        }
+        print(intArray);
     }
 
-    public static void swap(int[] array, int i, int j) {
-        if (i == j) {
-            return;
+    public static void print(int[] intArray) {
+        for (int num : intArray) {
+            System.out.println(num);
         }
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
     }
 }
