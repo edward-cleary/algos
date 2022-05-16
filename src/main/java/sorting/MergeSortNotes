@@ -1,0 +1,40 @@
+first i need to understand merge sort in pseudo code and be able to explain them
+then i will write and memorize the other java implementation because i think its easier
+than i will explain the other implementation
+then i will memorize both implementations
+
+so in pseudo code:
+
+splitting:
+start with an unsorted array of integers
+call mergesort on the unsorted array to sort
+then print the array
+in mergesort, calculate the length of the unsorted array
+if the length is less than 2, return, ending the recursion
+if its 2 or greater, calculate the middle Index
+create a lefthalf array equal to length of the middle index
+create a righthalf array equal to length of the unsorted array - middle index
+loop from 0 to mid index and insert into lefthalf the same index of the unsorted array
+loop from mid index to the length of unsorted array and insert into righthalf the value
+you have now successfully split your area into 2 arrays, left half and right half
+then call mergesort on each of those arrays, creating recursion until their length is 1
+once we have reached 1, we return, allowing us to call merge on each array of 2
+
+merging:
+create a merge function, passing in the unsorted array, lefthalf, righthalf
+calculate the length of each half, leftsize and rightsize
+create the 3 pointers, ijk, all set to 0
+while i < leftsize and j < rightsize, loop
+check if lefthalf at i is less than right half at j
+if so, set the kth position of the unsorted array equal to the lefthalf at i and i++
+if not, set the kth position of the unsorted array equal to the righthalf at j and j++
+after conditional and value is set in unsorted array, k++
+the loop will end when one of the halves runs out of numbers
+add remaining numbers from the array that has remaining values
+while i < left size, unsorted array at k = lefthalf at i - i++ and k++
+while j < right size, unsorted array at k = righthalf at j - j++ and k++
+this will recursively merge all of the halves until the entire array is sorted
+
+original mergesort call on the unsorted array manipulates the existing array passed in
+print out the array to see it is sorted
+
